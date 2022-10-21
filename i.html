@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+ 
+    <title>Expense Tracker</title>
+  </head>
+  <body>
+    <h2>Expense Tracker</h2>
+
+    <div class="container">
+    
+      <form onSubmit="savelocalStorage(event)">
+        <div class="form-control">
+          <label for="text">Choose expenseAmount</label>
+          <input id="amount" type="number" requried />
+        </div>
+        <div class="form-control">
+          <label for="text">Choose description </label>
+          
+          <input id="myInput" type="text" reqiured/>
+        </div>
+     
+        <div class="radio">
+            <label for="text">Choose a Category</label>
+            
+            <input id="myInput" type="text" reqired />
+        
+          </div>
+        <button class="btn">Add Expenses </button>
+      </form>
+    </div>
+    <script src="i.js">
+function saveToLocalStorage(event){
+    event.preventDefault();
+    let amount = event.target.number.value ;
+    let description  = event.target.text.value ; 
+    let catogrey = event.target.text.value ; 
+    localStorage.setItem('amount' , amount);
+    localStorage.setItem('description' , description);
+    localStorage.setItem('catogrey' , catogrey);
+const obj = {
+    amount,
+    description,
+    catogrey
+}
+localStorage.setItems('userDetails' , obj);
+}
+
+   
+    </script>
+  </body>
+</html>
